@@ -615,6 +615,152 @@
             .contact-card { padding: 3rem 1.5rem; }
             .contact-card h2 { font-size: 2.25rem; }
         }
+
+        /* --- Dashboard Case Study --- */
+        .dash-card {
+            background: var(--surface-color);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 32px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dash-head {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+        }
+
+        .dash-head h3 {
+            font-size: 1.6rem;
+        }
+
+        .dash-source {
+            font-family: var(--mono-font);
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            color: var(--primary-accent);
+            border: 1px solid rgba(94, 234, 212, 0.3);
+            border-radius: 999px;
+            padding: 0.4rem 0.9rem;
+            white-space: nowrap;
+        }
+
+        .dash-desc {
+            color: var(--text-dim);
+            max-width: 70ch;
+            margin-bottom: 2.25rem;
+        }
+
+        .dash-kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.25rem;
+        }
+
+        .dash-kpi {
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 1.1rem 1.25rem;
+            background: rgba(15, 23, 42, 0.35);
+        }
+
+        .dash-kpi-val {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            line-height: 1.2;
+        }
+
+        .dash-kpi-label {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        .dash-findings {
+            list-style: none;
+            margin-bottom: 2.25rem;
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .dash-findings li {
+            color: var(--text-dim);
+            padding-left: 1.6rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .dash-findings li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--primary-accent);
+        }
+
+        .dash-findings strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Responsive 16:9 frame for the Power BI embed */
+        .dash-embed {
+            position: relative;
+            padding-top: 62%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: rgba(15, 23, 42, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        .dash-embed iframe,
+        .dash-embed .dash-placeholder {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .dash-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dim);
+        }
+
+        .dash-placeholder i {
+            font-size: 2rem;
+            color: var(--primary-accent);
+        }
+
+        .dash-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        @media (max-width: 600px) {
+            .dash-card { padding: 1.75rem; border-radius: 24px; }
+            .dash-embed { padding-top: 90%; }
+        }
+
     </style>
 </head>
 <body>
@@ -636,6 +782,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#work">Work</a></li>
+                <li><a href="#dashboards">Dashboards</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -736,6 +883,63 @@
                         <span class="project-tech">SVM / BIO-ANALYTICS</span>
                         <a href="https://github.com/rahulkhanna5" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="dashboards">
+            <h2 class="section-title">Dashboards</h2>
+            <div class="dash-card">
+                <div class="dash-head">
+                    <h3>HR Attrition Intelligence</h3>
+                    <span class="dash-source">POWER BI / DAX</span>
+                </div>
+                <p class="dash-desc">
+                    A five-page Power BI report built on the IBM HR Employee Attrition dataset
+                    (1,470 employees), modelling where attrition concentrates and which employee
+                    segments it affects. The semantic model carries 34 DAX measures and 11
+                    calculated columns &mdash; banded age, tenure, income, promotion and manager
+                    groupings, each with explicit sort orders. Pages cover Overview, Demographics,
+                    Organization, Career &amp; Tenure, and Compensation &amp; Workload.
+                </p>
+
+                <div class="dash-kpis">
+                    <div class="dash-kpi"><span class="dash-kpi-val">1,470</span><span class="dash-kpi-label">Employees</span></div>
+                    <div class="dash-kpi"><span class="dash-kpi-val">237</span><span class="dash-kpi-label">Left</span></div>
+                    <div class="dash-kpi"><span class="dash-kpi-val">16.1%</span><span class="dash-kpi-label">Attrition rate</span></div>
+                    <div class="dash-kpi"><span class="dash-kpi-val">30.5%</span><span class="dash-kpi-label">Overtime attrition</span></div>
+                    <div class="dash-kpi"><span class="dash-kpi-val">33.6</span><span class="dash-kpi-label">Avg age of leavers</span></div>
+                </div>
+
+                <ul class="dash-findings">
+                    <li><strong>Pay is the sharpest divide.</strong> The lowest income band loses 28.6% of its people against 5.6% in the highest. Leavers average 4,787 a month; those who stay average 6,833.</li>
+                    <li><strong>Overtime roughly triples risk.</strong> 30.5% attrition among employees working overtime versus 10.4% without &mdash; and the gap holds inside every department.</li>
+                    <li><strong>Attrition is front-loaded.</strong> 39.2% in the 18&ndash;24 bracket falling to 9.2% by 45&ndash;49, and 27.9% among employees in their first year in a role.</li>
+                    <li><strong>Raises are not the lever.</strong> Average salary hike sits flat at roughly 15% across every income band, so it does not separate the groups that leave from those that stay.</li>
+                </ul>
+
+                <!--
+                    TO GO LIVE AND INTERACTIVE:
+                    In Power BI choose File > Embed report > Publish to web (public),
+                    copy the iframe src, then replace this whole comment and the
+                    .dash-placeholder div below with:
+
+                    <iframe title="HR Attrition Intelligence" src="PASTE_EMBED_URL_HERE" allowfullscreen></iframe>
+                -->
+                <div class="dash-embed">
+                    <div class="dash-placeholder">
+                        <i class="fas fa-chart-column"></i>
+                        <p>Interactive embed pending &mdash; publish-to-web needs enabling on the Power BI tenant.</p>
+                    </div>
+                </div>
+
+                <div class="dash-stack">
+                    <span class="tag">Power BI</span>
+                    <span class="tag">DAX</span>
+                    <span class="tag">Data Modelling</span>
+                    <span class="tag">HR Analytics</span>
+                    <span class="tag">TMDL</span>
                 </div>
             </div>
         </section>
