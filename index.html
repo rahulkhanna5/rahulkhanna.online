@@ -756,6 +756,21 @@
             gap: 0.6rem;
         }
 
+
+        .dash-note {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin: -1rem 0 2rem;
+        }
+
+        .dash-note a {
+            color: var(--primary-accent);
+            text-decoration: none;
+            margin-left: 0.5rem;
+        }
+
+        .dash-note a:hover { text-decoration: underline; }
+
         @media (max-width: 600px) {
             .dash-card { padding: 1.75rem; border-radius: 24px; }
             .dash-embed { padding-top: 90%; }
@@ -919,20 +934,14 @@
                     <li><strong>Raises are not the lever.</strong> Average salary hike sits flat at roughly 15% across every income band, so it does not separate the groups that leave from those that stay.</li>
                 </ul>
 
-                <!--
-                    TO GO LIVE AND INTERACTIVE:
-                    In Power BI choose File > Embed report > Publish to web (public),
-                    copy the iframe src, then replace this whole comment and the
-                    .dash-placeholder div below with:
-
-                    <iframe title="HR Attrition Intelligence" src="PASTE_EMBED_URL_HERE" allowfullscreen></iframe>
-                -->
                 <div class="dash-embed">
-                    <div class="dash-placeholder">
-                        <i class="fas fa-chart-column"></i>
-                        <p>Interactive embed pending &mdash; publish-to-web needs enabling on the Power BI tenant.</p>
-                    </div>
+                    <iframe title="HR Attrition Intelligence" src="https://app.powerbi.com/view?r=eyJrIjoiMzJkM2E2OTEtYTE3NC00M2UxLWJiNGQtYmE3Y2I1YzMxYzAxIiwidCI6IjcxNzNmZTk4LTdjYWQtNGVmMS1iMjc2LTBhYjI2MTcyOTEyNiJ9" loading="lazy" allowfullscreen></iframe>
                 </div>
+
+                <p class="dash-note">
+                    Fully interactive &mdash; use the page buttons and click any chart to cross-filter.
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiMzJkM2E2OTEtYTE3NC00M2UxLWJiNGQtYmE3Y2I1YzMxYzAxIiwidCI6IjcxNzNmZTk4LTdjYWQtNGVmMS1iMjc2LTBhYjI2MTcyOTEyNiJ9" target="_blank" rel="noopener">Open full screen <i class="fas fa-external-link-alt"></i></a>
+                </p>
 
                 <div class="dash-stack">
                     <span class="tag">Power BI</span>
