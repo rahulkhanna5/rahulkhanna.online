@@ -771,6 +771,44 @@
 
         .dash-note a:hover { text-decoration: underline; }
 
+
+        /* --- AI-built dashboard preview --- */
+        .dash-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .dash-preview {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .dash-preview img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .dash-preview figcaption {
+            font-size: 0.75rem;
+            color: #475569;
+            padding: 0.5rem 0.9rem;
+            border-top: 1px solid #e2e8f0;
+            font-family: var(--mono-font);
+        }
+
+        .dash-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
         @media (max-width: 600px) {
             .dash-card { padding: 1.75rem; border-radius: 24px; }
             .dash-embed { padding-top: 90%; }
@@ -798,6 +836,7 @@
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#dashboards">Dashboards</a></li>
+                <li><a href="#ai-dashboard">AI Dashboard</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -949,6 +988,61 @@
                     <span class="tag">Data Modelling</span>
                     <span class="tag">HR Analytics</span>
                     <span class="tag">TMDL</span>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="ai-dashboard">
+            <h2 class="section-title">AI-Built Dashboard</h2>
+            <div class="dash-card">
+                <div class="dash-head">
+                    <h3>DailyRate Analysis</h3>
+                    <span class="dash-source">ZOHO ANALYTICS / AI</span>
+                </div>
+                <p class="dash-desc">
+                    A ten-visual dashboard generated with Zoho Analytics&rsquo; AI assistant in about two
+                    minutes from the same IBM HR dataset, then exported. It looks at how DailyRate splits
+                    across department, business travel, marital status and education field. Included to
+                    show how quickly AI tooling can turn a prompt into a first-pass analysis &mdash; the
+                    Power BI report above is the hand-modelled version. This export is static
+                    (chart images), not interactive.
+                </p>
+
+                <div class="dash-kpis">
+                    <div class="dash-kpi"><span class="dash-kpi-val">12L</span><span class="dash-kpi-label">Total DailyRate</span></div>
+                    <div class="dash-kpi"><span class="dash-kpi-val">65.7%</span><span class="dash-kpi-label">R&amp;D share of total</span></div>
+                    <div class="dash-kpi"><span class="dash-kpi-val">30.3%</span><span class="dash-kpi-label">Sales share of total</span></div>
+                    <div class="dash-kpi"><span class="dash-kpi-val">6L</span><span class="dash-kpi-label">Married (highest group)</span></div>
+                </div>
+
+                <div class="dash-preview-grid">
+                    <figure class="dash-preview">
+                        <img src="dashboards/dailyrate/Image_56342400000000207014535659668568130753.png" alt="Department-wise DailyRate" loading="lazy">
+                        <figcaption>Department-wise DailyRate</figcaption>
+                    </figure>
+                    <figure class="dash-preview">
+                        <img src="dashboards/dailyrate/Image_5634240000000020751617494033248906042.png" alt="MaritalStatus-wise DailyRate" loading="lazy">
+                        <figcaption>MaritalStatus-wise DailyRate</figcaption>
+                    </figure>
+                    <figure class="dash-preview">
+                        <img src="dashboards/dailyrate/Image_56342400000000206517841517953997468383.png" alt="BusinessTravel-wise DailyRate" loading="lazy">
+                        <figcaption>BusinessTravel-wise DailyRate</figcaption>
+                    </figure>
+                    <figure class="dash-preview">
+                        <img src="dashboards/dailyrate/Image_56342400000000205910100938772909091965.png" alt="Top 5 EducationField by DailyRate" loading="lazy">
+                        <figcaption>Top 5 EducationField by DailyRate</figcaption>
+                    </figure>
+                </div>
+
+                <div class="dash-actions">
+                    <a href="dashboards/dailyrate/index.html" class="btn btn-primary" target="_blank" rel="noopener">View full dashboard <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="dash-stack">
+                    <span class="tag">Zoho Analytics</span>
+                    <span class="tag">AI-Assisted BI</span>
+                    <span class="tag">Rapid Prototyping</span>
                 </div>
             </div>
         </section>
