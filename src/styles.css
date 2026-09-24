@@ -121,7 +121,7 @@ body::before {
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--muted); padding: 7px 14px; border: 1px solid var(--line-2); border-radius: 999px; background: rgba(7,9,13,.5); backdrop-filter: blur(6px); }
 .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 0 0 rgba(163,230,53,.6); animation: pulse 2s infinite; display: inline-block; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(163,230,53,.55); } 70% { box-shadow: 0 0 0 9px rgba(163,230,53,0); } 100% { box-shadow: 0 0 0 0 rgba(163,230,53,0); } }
-.hero-title { font-family: var(--display); font-weight: 600; font-size: clamp(60px, 11vw, 168px); line-height: .9; letter-spacing: -0.045em; margin: 22px 0 22px; }
+.hero-title { font-family: var(--display); font-weight: 600; font-size: clamp(56px, min(11vw, 17vh), 168px); line-height: .9; letter-spacing: -0.045em; margin: 22px 0 22px; }
 .hero-title .line { display: block; overflow: hidden; padding-bottom: .04em; }
 .hero-title .line > span { display: inline-block; transform: translateY(105%); }
 .hero-sub { font-size: clamp(18px, 2vw, 24px); color: var(--muted); max-width: 520px; line-height: 1.45; }
