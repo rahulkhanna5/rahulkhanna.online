@@ -5,6 +5,7 @@ import Lenis from 'lenis'
 import { createHero, HERO_POINTS } from './hero'
 import { createStack } from './stack'
 import { initAsk } from './ask'
+import { createAvatar } from './avatar'
 import { PROJECTS, CATEGORY_LABEL, OIL_RESULTS, type Project } from './data'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -266,6 +267,9 @@ function closeDrawer() {
 }
 drawer.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest('[data-close-drawer]')) closeDrawer() })
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer() })
+
+/* ---------- avatar ---------- */
+try { createAvatar($<HTMLCanvasElement>('#avatar-canvas'), reduced) } catch { /* WebGL unavailable */ }
 
 /* ---------- stack ---------- */
 try {
