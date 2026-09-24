@@ -372,3 +372,8 @@ body::before {
   .reveal { opacity: 1; transform: none; }
   .hero-title .line > span { transform: none; }
 }
+
+/* avatar */
+.avatar-frame { background: radial-gradient(70% 60% at 50% 38%, rgba(56,189,248,.16), transparent 70%), linear-gradient(180deg, #0f1620, #0a0d12); }
+.avatar-frame::after { background: linear-gradient(to top, rgba(7,9,13,.6), transparent 30%); }
+#avatar-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: pointer; }
