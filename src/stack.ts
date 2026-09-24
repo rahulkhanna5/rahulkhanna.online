@@ -26,10 +26,6 @@ export const TOOLS: Tool[] = [
   { name: 'TensorFlow', group: 'ml', w: 1.7 },
   { name: 'Jupyter', group: 'ml', w: 1.4 },
   { name: 'LangChain', group: 'ml', w: 1.4 },
-  { name: 'Next.js', group: 'apps', w: 1.7 },
-  { name: 'TypeScript', group: 'apps', w: 1.6 },
-  { name: 'React Native', group: 'apps', w: 1.6 },
-  { name: 'Node.js', group: 'apps', w: 1.3 },
 ]
 
 const COLORS: Record<Group, string> = { de: '#38bdf8', bi: '#fbbf24', ml: '#a3e635', apps: '#c084fc' }
