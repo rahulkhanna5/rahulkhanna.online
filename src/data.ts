@@ -277,7 +277,7 @@ export const KB: KBEntry[] = [
   },
   {
     title: 'Education',
-    text: 'BCA from Lovely Professional University, Phagwara (2023–2026), with a CGPA of 8.52.',
+    text: 'BCA from Lovely Professional University, Phagwara (2023–2026), with a CGPA of 8.55.',
     tags: 'education degree college university lpu bca cgpa gpa study graduate',
     href: '#journey',
   },
@@ -295,19 +295,19 @@ export const KB: KBEntry[] = [
   },
   {
     title: 'Programming & databases',
-    text: 'Python and SQL. PostgreSQL, MySQL and Supabase: joins, aggregations, window functions, CTEs, indexing and schema design.',
-    tags: 'skills python sql postgres postgresql mysql supabase database cte window functions languages',
+    text: 'Python (Pandas, NumPy) and SQL, with exploratory data analysis, statistical summarisation and trend analysis on large datasets. PostgreSQL, MySQL, NeonDB and Supabase: joins, aggregations, window functions, CTEs, indexing and schema design.',
+    tags: 'skills python sql pandas numpy eda postgres postgresql mysql neondb supabase database cte window functions languages',
     href: '#stack',
   },
   {
     title: 'Data engineering skills',
-    text: 'REST API integration, web scraping (BeautifulSoup, Selenium), HTML/XML/JSON parsing, CSV and bulk-file ingestion, pagination and rate-limit handling, scheduling, retries, schema alignment, validation and deduplication.',
-    tags: 'data engineering etl pipeline api scraping ingestion etl elt validation dedup deduplication scheduling',
+    text: 'REST API integration, web scraping (BeautifulSoup, Selenium), HTML/XML/JSON parsing, CSV and bulk-file ingestion, pagination and rate-limit handling, scheduling, retries, schema alignment, validation and deduplication. Also Microsoft Fabric (Lakehouse, pipelines, Medallion architecture, materialised lake views), incremental loads with watermark and CDC, and Azure Databricks.',
+    tags: 'data engineering etl pipeline api scraping ingestion etl elt validation dedup deduplication scheduling fabric lakehouse medallion cdc watermark incremental databricks azure',
     href: '#stack',
   },
   {
     title: 'BI & visualisation',
-    text: 'Power BI (data modelling, DAX, interactive dashboards), Tableau, Excel (PivotTables, slicers), Matplotlib and Seaborn.',
+    text: 'Power BI (semantic models, data modelling, DAX, interactive dashboards), Tableau, Excel (PivotTables, slicers, conditional formatting), Matplotlib and Seaborn.',
     tags: 'bi power powerbi dax tableau excel dashboard visualization visualisation charts report',
     href: '#stack',
   },
@@ -385,8 +385,8 @@ export const KB: KBEntry[] = [
   },
   {
     title: 'Certifications',
-    text: 'Google Advanced Data Analytics (Coursera, 2025), SQL for Data Science (Coursera, 2024), Data Analytics with Python (NPTEL, 2025), and The Data Visualization Course (Udemy, 2025).',
-    tags: 'certification certificate course coursera google nptel udemy',
+    text: 'Complete Guide to Managing Data with Microsoft Fabric (LinkedIn Learning, 2026), Databricks for Data Analysts (LinkedIn Learning, 2026), Google Advanced Data Analytics (Coursera, 2025), Data Analytics with Python (NPTEL, 2025), SQL for Data Science (Coursera, 2024), and The Data Visualization Course (Udemy, 2025).',
+    tags: 'certification certificate course coursera google nptel udemy linkedin learning microsoft fabric databricks',
     href: '#research',
   },
   {
@@ -400,5 +400,23 @@ export const KB: KBEntry[] = [
     text: 'Since 2026 Rahul has been an Operations Analyst Intern at AskIITians. He tracks live online-batch sessions, faculty schedules and session status across multiple grades; owns the operations MIS by consolidating messy data from multiple sources into analysis-ready trackers and daily reports; builds recurring MIS and performance reports in Excel and SQL to monitor key metrics and flag anomalies; and documents workflows and SOPs while coordinating with cross-functional teams.',
     tags: 'experience work role intern internship job askiitians operations analyst mis reporting excel sql sop currently now present',
     href: '#journey',
+  },
+  {
+    title: 'Operations & MIS skills',
+    text: 'MIS and KPI reporting, process documentation, workflow optimisation, data reconciliation and cross-team coordination.',
+    tags: 'skills operations mis kpi reporting process documentation workflow optimisation reconciliation coordination sop',
+    href: '#stack',
+  },
+  {
+    title: 'Patent & IP research skills',
+    text: 'Patent data mining, technical documentation and IPC/CPC classification, searching InPASS, Espacenet, Google Patents and WIPO.',
+    tags: 'skills ip patent research data mining ipc cpc classification inpass espacenet google patents wipo documentation',
+    href: '#research',
+  },
+  {
+    title: 'AI tools',
+    text: 'Works with Claude and Codex, and with agentic AI workflows.',
+    tags: 'skills ai tools claude codex agentic workflows llm assistant',
+    href: '#stack',
   },
 ]

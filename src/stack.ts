@@ -13,6 +13,7 @@ export const TOOLS: Tool[] = [
   { name: 'Selenium', group: 'de', w: 1.4 },
   { name: 'BeautifulSoup', group: 'de', w: 1.5 },
   { name: 'Git', group: 'de', w: 1.3 },
+  { name: 'Microsoft Fabric', group: 'de', w: 1.3 },
   { name: 'Power BI', group: 'bi', w: 2.6 },
   { name: 'DAX', group: 'bi', w: 1.6 },
   { name: 'Tableau', group: 'bi', w: 2 },
