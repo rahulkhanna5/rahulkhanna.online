@@ -214,20 +214,20 @@ export const PROJECTS: Project[] = [
     id: 'cognicare',
     index: '09',
     title: 'CogniCare',
-    kicker: 'Research platform for cognitive health',
+    kicker: "Parkinson's screening mobile app",
     cats: ['apps'],
     year: '2026',
     summary:
-      'A research and clinical platform studying whether app-based games improve cognition in older adults with mild cognitive impairment.',
-    problem: 'Researchers need consistent scoring and patient histories, and patients need games that are easy to use.',
+      "A mobile app for early Parkinson's disease screening, built end to end from scratch: a spiral-tracing test scored with polar-coordinate analysis, on a React Native (Expo) front end with a NeonDB (PostgreSQL) backend.",
+    problem:
+      "The app screens for early Parkinson's disease by assessing a person's motor control through a drawing test.",
     built: [
-      'Patient app with a 25-item MCI questionnaire, 7 cognitive games and an accessibility focus system',
-      'Clinician app for caseload monitoring and game assignment',
-      'Admin web portal with usage and score analytics',
-      'Express + Prisma API with a scoring engine, JWT auth and role-based access on PostgreSQL',
+      "A spiral-tracing test that scores the user's drawing with polar-coordinate analysis to assess motor control",
+      'A React Native (Expo) mobile app with a NeonDB (PostgreSQL) backend',
+      'The full build, end to end and from scratch, through to publishing on the Google Play Store',
     ],
-    outcome: ['Three apps on one backend, from patient to clinician to researcher'],
-    stack: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'Prisma', 'PostgreSQL'],
+    outcome: ['Published on the Google Play Store and live in the testing track'],
+    stack: ['React Native', 'Expo', 'NeonDB', 'PostgreSQL'],
     links: [{ label: 'Code', href: `${GH}/parkinsons-app` }],
   },
 ]
@@ -367,8 +367,8 @@ export const KB: KBEntry[] = [
   },
   {
     title: 'CogniCare',
-    text: 'A research platform on whether app-based games improve cognition in older adults with mild cognitive impairment: patient and clinician apps in React Native/Expo, an admin portal, and an Express + Prisma + PostgreSQL API.',
-    tags: 'cognicare health healthcare app react native expo mci cognition research parkinson',
+    text: "CogniCare is a mobile app for early Parkinson's disease screening that Rahul built end to end, from scratch, with React Native (Expo) and a NeonDB (PostgreSQL) backend. Its spiral-tracing test scores the user's drawing with polar-coordinate analysis to assess motor control. It is published on the Google Play Store and live in the testing track.",
+    tags: 'cognicare parkinson parkinsons health healthcare app mobile react native expo neondb postgres spiral drawing motor control play store published',
     href: '#work',
   },
   {
