@@ -250,7 +250,7 @@ export interface KBEntry {
 export const KB: KBEntry[] = [
   {
     title: 'Who is Rahul?',
-    text: 'Rahul Khanna is a data analyst and data engineer from Sri Ganganagar, Rajasthan. He builds end-to-end data pipelines, integrates APIs and public data sources, cleans and validates datasets, and delivers interactive dashboards. He also builds ML models and full-stack apps.',
+    text: 'Rahul Khanna is a data analyst and data engineer from Sri Ganganagar, Rajasthan. He builds end-to-end data pipelines, integrates APIs and public data sources, cleans and validates datasets, and delivers interactive dashboards. He also builds ML models and full-stack apps. He is currently an Operations Analyst Intern at AskIITians.',
     tags: 'about intro summary who background profile yourself introduce',
     href: '#about',
   },
@@ -365,7 +365,13 @@ export const KB: KBEntry[] = [
   {
     title: 'Patent co-inventor role',
     text: 'At Lovely Professional University (2025–2026) Rahul contributed to invention disclosures, prior-art review and specification inputs, coordinated with the university IP cell, and tracked filings and publication through the IP India portal.',
-    tags: 'experience work role intern internship job lpu ip cell prior art',
+    tags: 'experience work role lpu ip cell prior art co-inventor',
+    href: '#journey',
+  },
+  {
+    title: 'Operations Analyst Intern at AskIITians',
+    text: 'Since 2026 Rahul has been an Operations Analyst Intern at AskIITians. He tracks live online-batch sessions, faculty schedules and session status across multiple grades; owns the operations MIS by consolidating messy data from multiple sources into analysis-ready trackers and daily reports; builds recurring MIS and performance reports in Excel and SQL to monitor key metrics and flag anomalies; and documents workflows and SOPs while coordinating with cross-functional teams.',
+    tags: 'experience work role intern internship job askiitians operations analyst mis reporting excel sql sop currently now present',
     href: '#journey',
   },
 ]
