@@ -86,8 +86,29 @@ export const PROJECTS: Project[] = [
     special: 'powerbi',
   },
   {
-    id: 'patent-db',
+    id: 'fabric-lakehouse',
     index: '03',
+    title: 'Microsoft Fabric Analytics Solution',
+    kicker: 'Lakehouse · Medallion architecture · Power BI',
+    cats: ['de', 'bi'],
+    year: '2026',
+    summary:
+      'An end-to-end analytics project in Microsoft Fabric: Azure pipelines ingest source data into a Lakehouse, a Medallion architecture refines it, and Power BI dashboards sit on top.',
+    problem:
+      'Take raw source data through governed, layered storage so reports are built on cleaned, standardised tables, and process only new and changed records on each load.',
+    built: [
+      'Azure pipelines ingesting source data into a Lakehouse in Microsoft Fabric',
+      'Medallion architecture (Bronze, Silver, Gold layers) to clean, standardise and organise the data, with catalogs for governed, discoverable data',
+      'Incremental loads using watermark and change data capture (CDC) techniques, so only new and changed records are processed',
+      'Materialised lake views to optimise performance, a semantic model over the curated data, and interactive Power BI dashboards',
+    ],
+    outcome: ['A governed Bronze, Silver and Gold lakehouse feeding a semantic model and interactive Power BI dashboards'],
+    stack: ['Microsoft Fabric', 'Azure Pipelines', 'Lakehouse', 'Medallion architecture', 'CDC', 'Power BI'],
+    links: [],
+  },
+  {
+    id: 'patent-db',
+    index: '04',
     title: 'Indian Patent Database',
     kicker: 'Scraping pipeline + filing-trends dashboard',
     cats: ['de', 'bi'],
@@ -109,7 +130,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'patent-landscape',
-    index: '04',
+    index: '05',
     title: 'Patent Landscape Generator',
     kicker: 'Automated technology-domain reports',
     cats: ['de', 'bi'],
@@ -131,7 +152,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'churn',
-    index: '05',
+    index: '06',
     title: 'Customer Churn Prediction',
     kicker: 'Model comparison for churn risk',
     cats: ['ml'],
@@ -151,7 +172,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'sentiment',
-    index: '06',
+    index: '07',
     title: 'Sentiment × Trading',
     kicker: 'Fear & Greed vs trader performance',
     cats: ['ml', 'bi'],
@@ -171,7 +192,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'gymos',
-    index: '07',
+    index: '08',
     title: 'GymOS',
     kicker: 'Gym management SaaS with a finance-grade dashboard',
     cats: ['apps'],
@@ -191,7 +212,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'cognicare',
-    index: '08',
+    index: '09',
     title: 'CogniCare',
     kicker: 'Research platform for cognitive health',
     cats: ['apps'],
@@ -306,6 +327,12 @@ export const KB: KBEntry[] = [
     title: 'HR Attrition Power BI report',
     text: 'A five-page Power BI report on 1,470 employees with 34 DAX measures. Key findings: the lowest income band loses 28.6% of its people vs 5.6% in the highest; overtime roughly triples attrition risk (30.5% vs 10.4%).',
     tags: 'hr attrition power bi dax employees report dashboard live overtime income',
+    href: '#work',
+  },
+  {
+    title: 'Microsoft Fabric analytics project',
+    text: 'An end-to-end analytics project in Microsoft Fabric. Azure pipelines ingest source data into a Lakehouse, which is processed through a Medallion architecture (Bronze, Silver, Gold) with catalogs for governed, discoverable data. Incremental loads use watermark and change data capture (CDC) so only new and changed records are processed. Materialised lake views optimise performance, and the curated data feeds a semantic model and interactive Power BI dashboards.',
+    tags: 'microsoft fabric lakehouse medallion bronze silver gold azure pipelines cdc watermark incremental semantic model power bi data engineering project',
     href: '#work',
   },
   {
