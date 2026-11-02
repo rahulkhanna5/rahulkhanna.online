@@ -385,8 +385,8 @@ export const KB: KBEntry[] = [
   },
   {
     title: 'Certifications',
-    text: 'Complete Guide to Managing Data with Microsoft Fabric (LinkedIn Learning, 2026), Databricks for Data Analysts (LinkedIn Learning, 2026), Google Advanced Data Analytics (Coursera, 2025), Data Analytics with Python (NPTEL, 2025), SQL for Data Science (Coursera, 2024), and The Data Visualization Course (Udemy, 2025).',
-    tags: 'certification certificate course coursera google nptel udemy linkedin learning microsoft fabric databricks',
+    text: 'Complete Guide to Managing Data with Microsoft Fabric (LinkedIn Learning, 2026), Databricks for Data Analysts (LinkedIn Learning, 2026), Google Advanced Data Analytics (Coursera, 2025), Data Analytics with Python (NPTEL, 2025), and SQL for Data Science (Coursera, 2024).',
+    tags: 'certification certificate course coursera google nptel linkedin learning microsoft fabric databricks',
     href: '#research',
   },
   {
