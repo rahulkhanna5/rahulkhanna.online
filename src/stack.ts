@@ -26,7 +26,6 @@ export const TOOLS: Tool[] = [
   { name: 'LightGBM', group: 'ml', w: 1.6 },
   { name: 'TensorFlow', group: 'ml', w: 1.7 },
   { name: 'Jupyter', group: 'ml', w: 1.4 },
-  { name: 'LangChain', group: 'ml', w: 1.4 },
 ]
 
 const COLORS: Record<Group, string> = { de: '#38bdf8', bi: '#fbbf24', ml: '#a3e635', apps: '#c084fc' }
