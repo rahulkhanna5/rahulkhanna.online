@@ -33,6 +33,10 @@ single source.
 - **Journey:** a red running lane with a white mark per milestone and a
   chequered line for "Now".
 - **Contact:** the red track with a chequered finish line.
+- **Dashboards page (`/dashboards/`):** the same floor, nav, ball and finish
+  line. Each Power BI report is a scoresheet with its pages on an ink
+  "screen", page tabs and a full-size view; a report with a public
+  Publish-to-web link loads live on request instead.
 
 Type: Big Shoulders Display (painted headings, uppercase) and Schibsted
 Grotesk (body), both from Google Fonts.
@@ -41,12 +45,16 @@ Grotesk (body), both from Google Fonts.
 
 | File | What it is |
 |---|---|
-| `index.html` | Page markup: hero, about, journey, work, research, contact, the ball; empty containers that `content.ts` fills |
-| `src/main.ts` | Nav and mobile menu, current-section marking, league-table toggles, project deep links, email copy, the ball's physics |
-| `src/content.ts` | Renders every content section from `data.ts` |
-| `src/data.ts` | **All site content lives here**: `PROJECTS`, `OIL_RESULTS` (real model metrics), `STATS`, `ABOUT`, `JOURNEY`, `RESEARCH`, `PATENT_TOOLS`, `CERTS`, `TOOLS`, `CONTACT`, and the `LINE` colour legend |
+| `index.html` | Home page markup: hero, about, journey, work, research, contact, the ball; empty containers that `content.ts` fills |
+| `dashboards/index.html` | The dashboards page markup: hero, report list, contact, full-size dialog, the ball |
+| `src/floor.ts` | Shared by both pages: reduced-motion switch, nav and mobile menu, email copy, the ball's physics |
+| `src/main.ts` | Home page: current-section marking, league-table toggles, project deep links |
+| `src/dashboards.ts` | Dashboards page: renders `DASHBOARDS`, page tabs, full-size view, live-report loading |
+| `src/content.ts` | Renders every home-page section from `data.ts` |
+| `src/data.ts` | **All site content lives here**: `PROJECTS`, `OIL_RESULTS` (real model metrics), `STATS`, `ABOUT`, `JOURNEY`, `RESEARCH`, `PATENT_TOOLS`, `CERTS`, `TOOLS`, `CONTACT`, `DASHBOARDS`, and the `LINE` colour legend |
 | `src/styles.css` | Design tokens at the top (`:root`), then all component styles |
-| `public/` | Static passthrough: `rahul.webp`, `resume.pdf`, `favicon.svg`, `dashboards/dailyrate/` (a standalone Zoho Analytics export, kept working as-is, linked from the site) |
+| `public/` | Static passthrough: `rahul.webp`, `resume.pdf`, `favicon.svg`, `dashboards/shots/` (report page images), `dashboards/dailyrate/` (a standalone Zoho Analytics export, kept working as-is, linked from the site) |
+| `vite.config.ts` | Builds both pages; `base: '/'`, so use absolute paths (`/resume.pdf`) in anything both pages share |
 | `vercel.json` | Framework: vite, build `npm run build`, output `dist` |
 
 ## Editing content
@@ -58,6 +66,13 @@ or `index.html` beyond structural text (headings, labels).
 **To add a project:** add an entry to `PROJECTS` in `src/data.ts` following
 the existing shape. The first entry is the featured scoresheet; the rest
 render as rows in the results list. Projects open by URL: `#project-<id>`.
+
+**To add a dashboard:** in Power BI, File > Export > PDF. Render each page
+to `public/dashboards/shots/<id>-<n>.jpg` at 2400px wide plus a 1200px
+`<id>-<n>-sm.jpg` (macOS: a short Swift/PDFKit script, then `sips`). Add an
+entry to `DASHBOARDS` in `src/data.ts`: findings come from the report's own
+cards and chart titles. If the report runs on synthetic data, set
+`synthetic: true` and say so in `data`; the page shows both.
 
 **The résumé is the source of truth.** `public/resume.pdf` is the file the
 site links to. When it changes, bring `ABOUT`, `JOURNEY`, `CERTS`, `TOOLS`
@@ -92,6 +107,9 @@ version.
 - **Animate a property from either CSS or JavaScript, never both.** The ball
   is moved by JavaScript (`transform`) and has no CSS transition; everything
   else is CSS.
+- **Label synthetic data.** Three of the Power BI reports run on synthetic
+  data. Their numbers never go in `STATS` or a project's results as if they
+  were real outcomes.
 - **Keep the line-colour legend honest.** A colour on the page means its
   discipline. Don't use white, yellow, red or green lines decoratively for
   anything else on the floor.

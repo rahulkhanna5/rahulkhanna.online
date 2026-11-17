@@ -2,7 +2,7 @@
 
 Personal portfolio of Rahul Khanna, data analyst and data engineer.
 
-Built with Vite and TypeScript. No framework and no runtime dependencies. The design is a multi-sport hall floor: each kind of work has its own line colour, and there is a ball you can dribble down the page by scrolling.
+Built with Vite and TypeScript. No framework and no runtime dependencies. The design is a multi-sport hall floor: each kind of work has its own line colour, and there is a ball you can dribble down the page by scrolling. A second page, `/dashboards/`, shows Power BI reports page by page.
 
 ## Run locally
 
@@ -17,9 +17,10 @@ npm run preview   # serve the production build
 
 | What | File |
 |---|---|
-| All content: projects, OilSense benchmark numbers, about, journey, patents, certifications, toolkit, contact | `src/data.ts` |
+| All content: projects, OilSense benchmark numbers, about, journey, patents, certifications, toolkit, contact, dashboards | `src/data.ts` |
+| Dashboard page images | `public/dashboards/shots/` |
 | Résumé linked from the site | `public/resume.pdf` |
 | Colours, type and layout | `src/styles.css` (tokens at the top) |
-| Page structure | `index.html` |
+| Page structure | `index.html`, `dashboards/index.html` |
 
 Pushing to `main` deploys the live site on Vercel.
