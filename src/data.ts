@@ -92,7 +92,7 @@ export const PROJECTS: Project[] = [
     ],
     outcome: ['Published on the Google Play Store and live in the testing track'],
     stack: ['React Native', 'Expo', 'NeonDB', 'PostgreSQL'],
-    links: [{ label: 'Code', href: `${GH}/parkinsons-app` }],
+    links: [{ label: 'Code', href: `${GH}/parkinsons-app` }, { label: 'Screening dashboard', href: '/dashboards/#cognicare' }],
   },
   {
     id: 'hr-attrition',
@@ -381,5 +381,31 @@ export const DASHBOARDS: Dashboard[] = [
     ],
     stack: ['Power BI', 'DAX', 'Microsoft Fabric', 'Direct Lake', 'CDC', 'Medallion architecture'],
     related: { label: 'Part of: End-to-End Analytics on Microsoft Fabric', href: '/#project-fabric-lakehouse' },
+  },
+  {
+    id: 'cognicare',
+    title: 'CogniCare Screening Analytics',
+    kicker: 'Spiral-test screening analytics for my Parkinson’s app',
+    cats: ['bi', 'ml'],
+    summary:
+      'Analytics for CogniCare, my Parkinson’s screening app (React Native and NeonDB): the testing-track funnel, how risk scores split between groups, and the polar-coordinate maths and model validation behind the score.',
+    data: 'Synthetic test results for demonstration, not clinical data. The funnel and the model metrics show how the app would be measured, not a clinical result.',
+    synthetic: true,
+    pages: ['Screening Overview', 'Polar Analysis & Validation'],
+    shots: true,
+    findings: [
+      '63% of installs go on to complete a first spiral test',
+      'The risk score separates the groups: a mean of 73 for PD-diagnosed users against 23 for the rest',
+      'Tremor shows up as a 4–6 Hz oscillation in the radial residual, while healthy drift stays flat',
+      'Validation on the synthetic set: ROC AUC 0.961, 85.4% sensitivity, 93.6% specificity',
+    ],
+    built: [
+      'Each drawing converted to polar form (r, θ) and fitted to the ideal Archimedean spiral r = a + bθ',
+      'An FFT of the residual to isolate tremor power, plus speed variability and pen lifts',
+      'A threshold slicer that trades sensitivity against specificity, with the confusion matrix beside it',
+      'Install-to-repeat-test funnel, weekly completed tests and feature importance for the score',
+    ],
+    stack: ['Power BI', 'DAX', 'Polar coordinates', 'FFT', 'ROC analysis'],
+    related: { label: 'The app: CogniCare', href: '/#project-cognicare' },
   },
 ]

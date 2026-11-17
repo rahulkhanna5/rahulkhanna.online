@@ -345,8 +345,11 @@ ul, ol { list-style: none; }
   .detail, .certs, .dash-body { grid-template-columns: 1fr; }
   .dash-cta { grid-template-columns: minmax(0, 1fr) auto; }
   .dash-cta-t { grid-column: 1 / -1; grid-row: 2; }
-  .hero-dash { padding-top: 40svh; }
-  .hero-dash .hero-lines { height: 38%; }
+  .hero-dash { padding-top: 42svh; }
+  .hero-dash .hero-lines { height: 35%; }
+  .dash-head { grid-template-columns: 1fr; }
+  .dash-no { font-size: 56px !important; margin-bottom: 10px; }
+  .dash .pages button { padding: 7px 11px; font-size: 13.5px; }
   .page-dash .ball.still { top: 20svh; left: 72vw; }
   .records thead { display: none; }
   .records tr { display: block; padding: 16px 0; border-bottom: 1.5px solid rgba(10, 26, 63, 0.2); }
