@@ -73,6 +73,13 @@ $('#fixtures').innerHTML = DASHBOARDS.map((d, i) => `
 $('#reports').innerHTML = DASHBOARDS.map(report).join('')
 $('#socials').innerHTML = CONTACT.links.map((l) => `<a href="${l.href}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('')
 
+// the sheets were drawn after the browser looked for #id, so go there now
+const target = location.hash.length > 1 ? document.getElementById(location.hash.slice(1)) : null
+if (target) {
+  const go = () => target.scrollIntoView({ behavior: 'instant' })
+  if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true })
+}
+
 initNav()
 initBall({ x: 0.76, y: 0.5, mx: 0.8, my: 0.2 })
 initEmail()

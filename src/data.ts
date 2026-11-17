@@ -356,4 +356,30 @@ export const DASHBOARDS: Dashboard[] = [
     stack: ['Power BI', 'DAX', 'Star schema', 'Cohort analysis', 'RFM'],
     related: { label: 'Part of: End-to-End Analytics on Microsoft Fabric', href: '/#project-fabric-lakehouse' },
   },
+  {
+    id: 'pipeline',
+    title: 'Fabric Pipeline Health',
+    kicker: 'Run monitoring for a Medallion pipeline in Microsoft Fabric',
+    cats: ['de', 'bi'],
+    summary:
+      'Watches the pipeline from my Fabric lakehouse project: 3 ingest pipelines, 3 Silver CDC notebooks and 2 Gold notebooks feeding a Direct Lake semantic model. It compares full reloads with watermark and CDC incremental loads, Sep 1 to Nov 15, 2026.',
+    data: 'The pipeline activities are the real ones in my Fabric workspace. The run telemetry is synthetic, generated to show how the monitoring works.',
+    synthetic: true,
+    pages: ['Pipeline Health', 'Data Quality & Freshness'],
+    shots: true,
+    findings: [
+      'Watermark and CDC loads cut end-to-end runtime from 58 to 7 minutes a day',
+      'Rows read per day fall from 4.9M on a full reload to about 27K',
+      'The Oct 14–16 schema drift shows up as a red streak: 7 failed runs',
+      'The 60-minute freshness SLA is met on 0% of full-load days and 100% after incremental loads and materialised lake views',
+    ],
+    built: [
+      'Run success rate as an activity × week matrix, so a bad week stands out',
+      'Critical-path Gantt from each activity’s start offset and duration',
+      'Data-quality failures by check: schema conformity, duplicates, null keys, referential integrity',
+      'CDC inserts, updates and deletes merged into Silver each week, with load-phase and layer slicers',
+    ],
+    stack: ['Power BI', 'DAX', 'Microsoft Fabric', 'Direct Lake', 'CDC', 'Medallion architecture'],
+    related: { label: 'Part of: End-to-End Analytics on Microsoft Fabric', href: '/#project-fabric-lakehouse' },
+  },
 ]
