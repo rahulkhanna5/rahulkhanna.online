@@ -408,4 +408,30 @@ export const DASHBOARDS: Dashboard[] = [
     stack: ['Power BI', 'DAX', 'Polar coordinates', 'FFT', 'ROC analysis'],
     related: { label: 'The app: CogniCare', href: '/#project-cognicare' },
   },
+  {
+    id: 'hr-attrition',
+    title: 'HR Attrition Intelligence',
+    kicker: 'Where attrition concentrates, and which levers matter',
+    cats: ['bi'],
+    summary:
+      'A five-page report on 1,470 employees: who leaves, where in the organisation, at what point in their career, and whether pay or workload explains it. This one is live: load it and every chart cross-filters the rest of the page.',
+    data: 'IBM’s public HR Analytics sample dataset of 1,470 fictional employees.',
+    synthetic: false,
+    pages: ['Overview', 'Demographics', 'Organization', 'Career & Tenure', 'Compensation & Workload'],
+    shots: false,
+    live: 'https://app.powerbi.com/view?r=eyJrIjoiMzJkM2E2OTEtYTE3NC00M2UxLWJiNGQtYmE3Y2I1YzMxYzAxIiwidCI6IjcxNzNmZTk4LTdjYWQtNGVmMS1iMjc2LTBhYjI2MTcyOTEyNiJ9',
+    findings: [
+      'Attrition is 16.1%: 237 of 1,470 employees left',
+      'The lowest income band loses 28.6% of its people, against 5.6% in the highest',
+      'Overtime roughly triples risk: 30.5% attrition with overtime vs 10.4% without',
+      'Raises are not the lever: hike size is flat at about 15% across every income band',
+    ],
+    built: [
+      'Semantic model with 34 DAX measures and 11 calculated columns',
+      'Banded age, tenure, income, promotion and manager groupings, each with explicit sort orders',
+      'Button navigation across five pages',
+    ],
+    stack: ['Power BI', 'DAX', 'Data modelling', 'TMDL'],
+    related: { label: 'Project write-up: HR Attrition Intelligence', href: '/#project-hr-attrition' },
+  },
 ]
