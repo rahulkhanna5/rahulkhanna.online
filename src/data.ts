@@ -54,8 +54,49 @@ export const PROJECTS: Project[] = [
     special: 'oil-chart',
   },
   {
-    id: 'hr-attrition',
+    id: 'fabric-lakehouse',
     index: '02',
+    title: 'End-to-End Analytics on Microsoft Fabric',
+    kicker: 'Lakehouse · Medallion architecture · Power BI',
+    cats: ['de', 'bi'],
+    year: '2026',
+    summary:
+      'An end-to-end analytics project in Microsoft Fabric: Azure pipelines ingest source data into a Lakehouse, a Medallion architecture refines it, and Power BI dashboards sit on top.',
+    problem:
+      'Take raw source data through governed, layered storage so reports are built on cleaned, standardised tables, and process only new and changed records on each load.',
+    built: [
+      'Azure pipelines ingesting source data into a Lakehouse in Microsoft Fabric',
+      'Medallion architecture (Bronze, Silver, Gold layers) to clean, standardise and organise the data, with catalogs for governed, discoverable data',
+      'Incremental loads using watermark and change data capture (CDC) techniques, so only new and changed records are processed',
+      'Materialised lake views to optimise performance, a semantic model over the curated data, and interactive Power BI dashboards',
+    ],
+    outcome: ['A governed Bronze, Silver and Gold lakehouse feeding a semantic model and interactive Power BI dashboards'],
+    stack: ['Microsoft Fabric', 'Azure Pipelines', 'Lakehouse', 'Medallion architecture', 'CDC', 'Power BI'],
+    links: [],
+  },
+  {
+    id: 'cognicare',
+    index: '03',
+    title: 'CogniCare',
+    kicker: "Parkinson's screening mobile app",
+    cats: ['apps'],
+    year: '2026',
+    summary:
+      "A mobile app for early Parkinson's disease screening, built end to end from scratch: a spiral-tracing test scored with polar-coordinate analysis, on a React Native (Expo) front end with a NeonDB (PostgreSQL) backend.",
+    problem:
+      "The app screens for early Parkinson's disease by assessing a person's motor control through a drawing test.",
+    built: [
+      "A spiral-tracing test that scores the user's drawing with polar-coordinate analysis to assess motor control",
+      'A React Native (Expo) mobile app with a NeonDB (PostgreSQL) backend',
+      'The full build, end to end and from scratch, through to publishing on the Google Play Store',
+    ],
+    outcome: ['Published on the Google Play Store and live in the testing track'],
+    stack: ['React Native', 'Expo', 'NeonDB', 'PostgreSQL'],
+    links: [{ label: 'Code', href: `${GH}/parkinsons-app` }],
+  },
+  {
+    id: 'hr-attrition',
+    index: '04',
     title: 'HR Attrition Intelligence',
     kicker: 'Five-page Power BI report · live',
     cats: ['bi'],
@@ -86,73 +127,8 @@ export const PROJECTS: Project[] = [
     special: 'powerbi',
   },
   {
-    id: 'fabric-lakehouse',
-    index: '03',
-    title: 'Microsoft Fabric Analytics Solution',
-    kicker: 'Lakehouse · Medallion architecture · Power BI',
-    cats: ['de', 'bi'],
-    year: '2026',
-    summary:
-      'An end-to-end analytics project in Microsoft Fabric: Azure pipelines ingest source data into a Lakehouse, a Medallion architecture refines it, and Power BI dashboards sit on top.',
-    problem:
-      'Take raw source data through governed, layered storage so reports are built on cleaned, standardised tables, and process only new and changed records on each load.',
-    built: [
-      'Azure pipelines ingesting source data into a Lakehouse in Microsoft Fabric',
-      'Medallion architecture (Bronze, Silver, Gold layers) to clean, standardise and organise the data, with catalogs for governed, discoverable data',
-      'Incremental loads using watermark and change data capture (CDC) techniques, so only new and changed records are processed',
-      'Materialised lake views to optimise performance, a semantic model over the curated data, and interactive Power BI dashboards',
-    ],
-    outcome: ['A governed Bronze, Silver and Gold lakehouse feeding a semantic model and interactive Power BI dashboards'],
-    stack: ['Microsoft Fabric', 'Azure Pipelines', 'Lakehouse', 'Medallion architecture', 'CDC', 'Power BI'],
-    links: [],
-  },
-  {
-    id: 'patent-db',
-    index: '04',
-    title: 'Indian Patent Database',
-    kicker: 'Scraping pipeline + filing-trends dashboard',
-    cats: ['de', 'bi'],
-    year: '2026',
-    summary:
-      'An automated pipeline that collects published Indian patent applications into PostgreSQL and turns them into a filing-trends dashboard.',
-    problem:
-      'Published patent records are spread across web pages with inconsistent dates, applicant names and missing fields, which makes trend analysis slow and error-prone.',
-    built: [
-      'Extraction with BeautifulSoup and Selenium into a normalised PostgreSQL schema',
-      'Duplicate detection, date normalisation, applicant-name standardisation and null-field flagging',
-      'SQL views powering a Power BI dashboard: filing trends, top applicants, technology domains, office-wise split',
-      'Client-ready Excel summaries with PivotTables, conditional formatting and slicers',
-    ],
-    outcome: ['A repeatable pipeline from raw web records to a dashboard and Excel pack'],
-    stack: ['Python', 'BeautifulSoup', 'Selenium', 'Pandas', 'PostgreSQL', 'Power BI', 'Excel'],
-    links: [],
-    note: 'Code is private. Walkthrough available on request.',
-  },
-  {
-    id: 'patent-landscape',
-    index: '05',
-    title: 'Patent Landscape Generator',
-    kicker: 'Automated technology-domain reports',
-    cats: ['de', 'bi'],
-    year: '2026',
-    summary:
-      'Pulls patent records for a technology domain from public APIs, deduplicates across sources and produces a formatted multi-sheet Excel workbook.',
-    problem:
-      'Landscape studies were being assembled by hand, one search and one spreadsheet at a time.',
-    built: [
-      'Keyword- and classification-driven (IPC/CPC) workflow across public patent APIs',
-      'Cross-source deduplication and a formatted multi-sheet workbook built with openpyxl',
-      'Tableau views for assignee share, jurisdiction spread and filing velocity',
-      'A reusable run-book so the extraction can be repeated for any domain',
-    ],
-    outcome: ['Landscape reports that can be regenerated for a new domain from a keyword list'],
-    stack: ['Python', 'REST APIs', 'Pandas', 'openpyxl', 'Tableau'],
-    links: [],
-    note: 'Code is private. Walkthrough available on request.',
-  },
-  {
     id: 'churn',
-    index: '06',
+    index: '05',
     title: 'Customer Churn Prediction',
     kicker: 'Model comparison for churn risk',
     cats: ['ml'],
@@ -172,7 +148,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'sentiment',
-    index: '07',
+    index: '06',
     title: 'Sentiment × Trading',
     kicker: 'Fear & Greed vs trader performance',
     cats: ['ml', 'bi'],
@@ -192,7 +168,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'gymos',
-    index: '08',
+    index: '07',
     title: 'GymOS',
     kicker: 'Gym management SaaS with a finance-grade dashboard',
     cats: ['apps'],
@@ -209,26 +185,6 @@ export const PROJECTS: Project[] = [
     outcome: ['The full product can be explored end to end in all three roles'],
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     links: [{ label: 'Code', href: `${GH}/GYMOS` }],
-  },
-  {
-    id: 'cognicare',
-    index: '09',
-    title: 'CogniCare',
-    kicker: "Parkinson's screening mobile app",
-    cats: ['apps'],
-    year: '2026',
-    summary:
-      "A mobile app for early Parkinson's disease screening, built end to end from scratch: a spiral-tracing test scored with polar-coordinate analysis, on a React Native (Expo) front end with a NeonDB (PostgreSQL) backend.",
-    problem:
-      "The app screens for early Parkinson's disease by assessing a person's motor control through a drawing test.",
-    built: [
-      "A spiral-tracing test that scores the user's drawing with polar-coordinate analysis to assess motor control",
-      'A React Native (Expo) mobile app with a NeonDB (PostgreSQL) backend',
-      'The full build, end to end and from scratch, through to publishing on the Google Play Store',
-    ],
-    outcome: ['Published on the Google Play Store and live in the testing track'],
-    stack: ['React Native', 'Expo', 'NeonDB', 'PostgreSQL'],
-    links: [{ label: 'Code', href: `${GH}/parkinsons-app` }],
   },
 ]
 
@@ -260,163 +216,88 @@ export const OIL_RESULTS: Record<string, { model: string; mape: number; r2: numb
   ],
 }
 
-export interface KBEntry {
-  title: string
-  text: string
-  tags: string
-  href?: string
+/* ---------------------------------------------------------------------------
+   Page content for the INFO beats. Text is carried over from the previous
+   site as is; nothing here is new or estimated.
+--------------------------------------------------------------------------- */
+
+export interface Stat { value: number; decimals?: number; suffix?: string; label: string }
+export const STATS: Stat[] = [
+  { value: 3, label: 'patent applications as co-inventor' },
+  { value: 4, label: 'live data sources in one pipeline' },
+  { value: 4.0, decimals: 1, suffix: '%', label: 'MAPE on 1-day Brent forecasts' },
+  { value: 8.55, decimals: 2, label: 'CGPA, BCA at LPU' },
+]
+
+export const ABOUT = {
+  /** From Rahul's own description of himself; keep it to what he has said. */
+  offClock: "Away from the screen I play sport and I like anything competitive. I also keep up with what's new in tech; these days that means agentic AI workflows with Claude and Codex.",
+  lead: "I'm a data analyst and data engineer who likes the unglamorous part: getting messy, multi-source data into a shape people can trust.",
+  paragraphs: [
+    'I build pipelines that pull from APIs and the web, validate and deduplicate the data, and land clean tables in PostgreSQL or a Microsoft Fabric lakehouse, with Bronze, Silver and Gold layers and incremental loads. On top of that I build Power BI and Tableau dashboards, and forecasting and classification models when the question needs one.',
+    "I'm an Operations Analyst Intern at AskIITians, where I own the operations MIS: I consolidate messy data from several sources into daily reports, build recurring MIS reports in Excel and SQL, and flag anomalies and process bottlenecks. Alongside my BCA at Lovely Professional University I'm co-inventor on three Indian patent applications, published a paper in IJNRD, and earned Microsoft's Fabric Analyst in a Day certification.",
+  ],
+  cards: [
+    { key: 'A', title: 'Data engineering', text: 'Microsoft Fabric lakehouses with Medallion layers and incremental loads (watermark, CDC), plus API ingestion, scraping, validation and deduplication.' },
+    { key: 'B', title: 'Analytics & BI', text: 'Power BI semantic models and dashboards, Tableau views, and Excel MIS packs with PivotTables and slicers.' },
+    { key: 'C', title: 'Machine learning', text: 'Forecasting, classification and clustering, benchmarked honestly against baselines.' },
+    { key: 'D', title: 'Apps & products', text: 'React Native (Expo) and Next.js front ends so the data reaches the people who use it.' },
+  ],
 }
 
-/** Knowledge base for the in-browser "Ask my portfolio" search. */
-export const KB: KBEntry[] = [
-  {
-    title: 'Who is Rahul?',
-    text: 'Rahul Khanna is a data analyst and data engineer from Sri Ganganagar, Rajasthan. He builds end-to-end data pipelines, integrates APIs and public data sources, cleans and validates datasets, and delivers interactive dashboards. He also builds ML models and full-stack apps. He is currently an Operations Analyst Intern at AskIITians.',
-    tags: 'about intro summary who background profile yourself introduce',
-    href: '#about',
-  },
-  {
-    title: 'Education',
-    text: 'BCA from Lovely Professional University, Phagwara (2023–2026), with a CGPA of 8.55.',
-    tags: 'education degree college university lpu bca cgpa gpa study graduate',
-    href: '#journey',
-  },
-  {
-    title: 'Roles he is looking for',
-    text: 'Rahul is open to Data Analyst, Data Engineer and AI/ML roles. He is open to on-site, hybrid and remote roles in India.',
-    tags: 'hire hiring job role open available looking work opportunity relocate remote hybrid onsite',
-    href: '#contact',
-  },
-  {
-    title: 'Contact',
-    text: 'Email rahulkhanna6593@gmail.com, or connect on LinkedIn (linkedin.com/in/rahul-khannaa). Code is on GitHub at github.com/rahulkhanna5.',
-    tags: 'contact email reach linkedin github message talk connect',
-    href: '#contact',
-  },
-  {
-    title: 'Programming & databases',
-    text: 'Python (Pandas, NumPy) and SQL, with exploratory data analysis, statistical summarisation and trend analysis on large datasets. PostgreSQL, MySQL, NeonDB and Supabase: joins, aggregations, window functions, CTEs, indexing and schema design.',
-    tags: 'skills python sql pandas numpy eda postgres postgresql mysql neondb supabase database cte window functions languages',
-    href: '#stack',
-  },
-  {
-    title: 'Data engineering skills',
-    text: 'REST API integration, web scraping (BeautifulSoup, Selenium), HTML/XML/JSON parsing, CSV and bulk-file ingestion, pagination and rate-limit handling, scheduling, retries, schema alignment, validation and deduplication. Also Microsoft Fabric (Lakehouse, pipelines, Medallion architecture, materialised lake views), incremental loads with watermark and CDC, and Azure Databricks.',
-    tags: 'data engineering etl pipeline api scraping ingestion etl elt validation dedup deduplication scheduling fabric lakehouse medallion cdc watermark incremental databricks azure',
-    href: '#stack',
-  },
-  {
-    title: 'BI & visualisation',
-    text: 'Power BI (semantic models, data modelling, DAX, interactive dashboards), Tableau, Excel (PivotTables, slicers, conditional formatting), Matplotlib and Seaborn.',
-    tags: 'bi power powerbi dax tableau excel dashboard visualization visualisation charts report',
-    href: '#stack',
-  },
-  {
-    title: 'Machine learning',
-    text: 'Forecasting, classification and clustering with scikit-learn, XGBoost, LightGBM and TensorFlow/Keras, including stacked ensembles and LSTM models.',
-    tags: 'machine learning ml models ai forecasting classification clustering xgboost lightgbm tensorflow keras lstm scikit sklearn deep',
-    href: '#stack',
-  },
-  {
-    title: 'OilSense: crude oil forecasting',
-    text: 'OilSense combines EIA, FRED, yfinance and NewsAPI data into one validated dataset and forecasts WTI and Brent prices. A stacked ensemble (LSTM, XGBoost, LightGBM with a Ridge meta-model) reached 4.0% MAPE and R² 0.93 on 1-day Brent forecasts.',
-    tags: 'oil oilsense crude forecast forecasting price prediction wti brent eia fred yfinance newsapi ensemble stacked mape',
-    href: '#work',
-  },
-  {
-    title: 'HR Attrition Power BI report',
-    text: 'A five-page Power BI report on 1,470 employees with 34 DAX measures. Key findings: the lowest income band loses 28.6% of its people vs 5.6% in the highest; overtime roughly triples attrition risk (30.5% vs 10.4%).',
-    tags: 'hr attrition power bi dax employees report dashboard live overtime income',
-    href: '#work',
-  },
-  {
-    title: 'Microsoft Fabric analytics project',
-    text: 'An end-to-end analytics project in Microsoft Fabric. Azure pipelines ingest source data into a Lakehouse, which is processed through a Medallion architecture (Bronze, Silver, Gold) with catalogs for governed, discoverable data. Incremental loads use watermark and change data capture (CDC) so only new and changed records are processed. Materialised lake views optimise performance, and the curated data feeds a semantic model and interactive Power BI dashboards.',
-    tags: 'microsoft fabric lakehouse medallion bronze silver gold azure pipelines cdc watermark incremental semantic model power bi data engineering project',
-    href: '#work',
-  },
-  {
-    title: 'Indian Patent Database',
-    text: 'An automated pipeline that scrapes published Indian patent applications with BeautifulSoup and Selenium, cleans them into PostgreSQL, and powers a Power BI filing-trends dashboard plus Excel summaries.',
-    tags: 'patent database scraping selenium beautifulsoup postgres power bi filing trends pipeline',
-    href: '#work',
-  },
-  {
-    title: 'Patent Landscape Generator',
-    text: 'Pulls patent records for a technology domain from public patent APIs, deduplicates across sources, and builds a multi-sheet Excel workbook plus Tableau views for assignee share, jurisdictions and filing velocity.',
-    tags: 'patent landscape api tableau excel openpyxl report generator',
-    href: '#work',
-  },
-  {
-    title: 'Customer churn prediction',
-    text: 'Compares Logistic Regression, Random Forest, Gradient Boosting and SVM to predict customer churn, evaluated on accuracy, precision, recall, F1 and ROC-AUC.',
-    tags: 'churn customer prediction classification logistic random forest svm roc',
-    href: '#work',
-  },
-  {
-    title: 'Sentiment × Trading',
-    text: 'Analyses how the Fear & Greed Index relates to trader returns and win rate, with Random Forest feature importance and K-Means regime detection visualised with PCA.',
-    tags: 'sentiment trading fear greed kmeans clustering pca regime',
-    href: '#work',
-  },
-  {
-    title: 'GymOS',
-    text: 'A gym management SaaS built with Next.js, React, TypeScript and Tailwind: 19 routes across member, trainer and owner roles, with revenue and MRR dashboards drawn in hand-rolled SVG.',
-    tags: 'gymos gym saas nextjs next react typescript app product web',
-    href: '#work',
-  },
-  {
-    title: 'CogniCare',
-    text: "CogniCare is a mobile app for early Parkinson's disease screening that Rahul built end to end, from scratch, with React Native (Expo) and a NeonDB (PostgreSQL) backend. Its spiral-tracing test scores the user's drawing with polar-coordinate analysis to assess motor control. It is published on the Google Play Store and live in the testing track.",
-    tags: 'cognicare parkinson parkinsons health healthcare app mobile react native expo neondb postgres spiral drawing motor control play store published',
-    href: '#work',
-  },
-  {
-    title: 'Patents',
-    text: 'Co-inventor on three Indian patent applications: Smart-ID Based Campus Presence & Safety Management System (202511104180, published 2025), A Smart Therapeutic Mattress System (202511052262, filed 2025), and A Smart Urinal System for Early Detection of Chronic Kidney Disease (202611071811, filed 2026).',
-    tags: 'patent patents inventor invention ip research truepass mattress kidney',
-    href: '#research',
-  },
-  {
-    title: 'Publication',
-    text: 'Empirical-Study-Based Analysis of True-Pass System, published in IJNRD, Vol. 11, Issue 4, April 2026 (Impact Factor 8.76).',
-    tags: 'paper publication research journal ijnrd truepass published',
-    href: '#research',
-  },
-  {
-    title: 'Certifications',
-    text: 'Complete Guide to Managing Data with Microsoft Fabric (LinkedIn Learning, 2026), Databricks for Data Analysts (LinkedIn Learning, 2026), Google Advanced Data Analytics (Coursera, 2025), and Data Analytics with Python (NPTEL, 2025).',
-    tags: 'certification certificate course coursera google nptel linkedin learning microsoft fabric databricks',
-    href: '#research',
-  },
-  {
-    title: 'Patent co-inventor role',
-    text: 'At Lovely Professional University (2025–2026) Rahul contributed to invention disclosures, prior-art review and specification inputs, coordinated with the university IP cell, and tracked filings and publication through the IP India portal.',
-    tags: 'experience work role lpu ip cell prior art co-inventor',
-    href: '#journey',
-  },
-  {
-    title: 'Operations Analyst Intern at AskIITians',
-    text: 'Since 2026 Rahul has been an Operations Analyst Intern at AskIITians. He tracks live online-batch sessions, faculty schedules and session status across multiple grades; owns the operations MIS by consolidating messy data from multiple sources into analysis-ready trackers and daily reports; builds recurring MIS and performance reports in Excel and SQL to monitor key metrics and flag anomalies; and documents workflows and SOPs while coordinating with cross-functional teams.',
-    tags: 'experience work role intern internship job askiitians operations analyst mis reporting excel sql sop currently now present',
-    href: '#journey',
-  },
-  {
-    title: 'Operations & MIS skills',
-    text: 'MIS and KPI reporting, process documentation, workflow optimisation, data reconciliation and cross-team coordination.',
-    tags: 'skills operations mis kpi reporting process documentation workflow optimisation reconciliation coordination sop',
-    href: '#stack',
-  },
-  {
-    title: 'Patent & IP research skills',
-    text: 'Patent data mining, technical documentation and IPC/CPC classification, searching InPASS, Espacenet, Google Patents and WIPO.',
-    tags: 'skills ip patent research data mining ipc cpc classification inpass espacenet google patents wipo documentation',
-    href: '#research',
-  },
-  {
-    title: 'AI tools',
-    text: 'Works with Claude and Codex, and with agentic AI workflows.',
-    tags: 'skills ai tools claude codex agentic workflows llm assistant',
-    href: '#stack',
-  },
+export interface JourneyItem { when: string; title: string; where?: string; text?: string; now?: boolean }
+export const JOURNEY: JourneyItem[] = [
+  { when: '2023', title: 'Started BCA', where: 'Lovely Professional University, Phagwara', text: 'Foundations in programming, statistics and databases.' },
+  { when: 'Jan–Apr 2025', title: 'Multi-source market data pipeline', where: 'OilSense', text: 'Four public APIs merged into one validated dataset, a nine-page dashboard and a forecasting model.' },
+  { when: '2025 – 2026', title: 'Patent co-inventor', where: 'Lovely Professional University, Phagwara', text: 'Invention disclosures, prior-art review and specification inputs for three Indian patent applications, and tracking filing numbers, publication dates and office correspondence on the IP India portal.' },
+  { when: '2025', title: 'Google Advanced Data Analytics', where: 'Coursera, plus Data Analytics with Python on NPTEL', text: 'Statistics, regression and the full analytics workflow.' },
+  { when: 'Apr 2026', title: 'Paper published in IJNRD', where: 'Impact factor 8.76', text: 'An empirical study of the TruePass campus safety system.' },
+  { when: '2026', title: 'Fabric Analyst in a Day', where: 'Microsoft and MAQ Software', text: 'Certified on Microsoft Fabric, alongside courses on managing data in Fabric and Databricks for data analysts.' },
+  { when: '2026', title: 'BCA graduate, CGPA 8.55', where: 'Lovely Professional University, Phagwara' },
+  { when: '2026 – Present', title: 'Operations Analyst Intern', where: 'AskIITians', text: 'Tracking live online-batch sessions, faculty schedules and session status across grades; owning the operations MIS; and building recurring Excel and SQL reports that flag anomalies and bottlenecks.' },
+  { when: 'Now', title: 'Looking for my first data role', text: 'Data Analyst, Data Engineer or ML. On-site, hybrid or remote in India.', now: true },
 ]
+
+export interface ResearchItem { status: string; kind: 'published' | 'filed' | 'paper'; title: string; meta: string }
+export const RESEARCH: ResearchItem[] = [
+  { status: 'Published 2025', kind: 'published', title: 'Smart-ID Based Campus Presence & Safety Management System', meta: 'App No. 202511104180' },
+  { status: 'Filed 2025', kind: 'filed', title: 'A Smart Therapeutic Mattress System', meta: 'App No. 202511052262' },
+  { status: 'Filed 2026', kind: 'filed', title: 'A Smart Urinal System for Early Detection of Chronic Kidney Disease', meta: 'App No. 202611071811' },
+  { status: 'Paper, IJNRD', kind: 'paper', title: 'Empirical-Study-Based Analysis of True-Pass System', meta: 'Vol. 11, Issue 4, Apr 2026. Impact factor 8.76. Paper ID IJNRD2604711' },
+]
+/** Patent research tools, from the résumé. */
+export const PATENT_TOOLS = ['IPC/CPC classification', 'InPASS', 'Espacenet', 'Google Patents', 'WIPO']
+
+export const CERTS: { title: string; by: string }[] = [
+  { title: 'Fabric Analyst in a Day', by: 'Microsoft and MAQ Software, 2026' },
+  { title: 'Complete Guide to Managing Data with Microsoft Fabric: From Beginner to Advanced', by: 'LinkedIn Learning, 2026' },
+  { title: 'Databricks for Data Analysts', by: 'LinkedIn Learning, 2026' },
+  { title: 'Google Advanced Data Analytics', by: 'Coursera, 2025' },
+  { title: 'Data Analytics with Python', by: 'NPTEL, 2025' },
+]
+
+/** The toolkit, as listed on the résumé. Each group is drawn in its discipline's line colour. */
+export const TOOLS: { name: string; line: Category; items: string[] }[] = [
+  { name: 'Data engineering', line: 'de', items: ['Python', 'SQL', 'PostgreSQL', 'MySQL', 'NeonDB', 'Microsoft Fabric', 'Azure Databricks', 'REST APIs', 'Web scraping', 'Git'] },
+  { name: 'Analytics & BI', line: 'bi', items: ['Power BI', 'DAX', 'Tableau', 'Excel', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Jupyter'] },
+  { name: 'Apps & AI tools', line: 'apps', items: ['React Native (Expo)', 'VS Code', 'Claude', 'Codex'] },
+]
+
+export const CONTACT = {
+  email: 'rahulkhanna6593@gmail.com',
+  links: [
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/rahul-khannaa/' },
+    { label: 'GitHub', href: 'https://github.com/rahulkhanna5' },
+    { label: 'Résumé', href: './resume.pdf' },
+  ],
+}
+
+/** On a sports hall floor every game has its own line colour. Here every discipline does. */
+export const LINE: Record<Category, { colour: string; name: string }> = {
+  de: { colour: 'var(--white)', name: 'white' },
+  bi: { colour: 'var(--yellow)', name: 'yellow' },
+  ml: { colour: 'var(--red-line)', name: 'red' },
+  apps: { colour: 'var(--green)', name: 'green' },
+}
+/** Which about-card belongs to which discipline. */
+export const ABOUT_CARD_CAT: Category[] = ['de', 'bi', 'ml', 'apps']

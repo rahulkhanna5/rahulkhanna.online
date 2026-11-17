@@ -3,289 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rahul Khanna · Data Analyst & Data Engineer</title>
+    <title>Rahul Khanna, data analyst and data engineer</title>
     <meta name="description" content="Rahul Khanna builds data pipelines, dashboards and ML models. Data analyst and data engineer, co-inventor on three patent applications." />
-    <meta property="og:title" content="Rahul Khanna · Data Analyst & Data Engineer" />
+    <meta property="og:title" content="Rahul Khanna, data analyst and data engineer" />
     <meta property="og:description" content="Pipelines, dashboards and models that turn raw data into decisions." />
-    <meta name="theme-color" content="#07090D" />
+    <meta name="theme-color" content="#1F55C7" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <!-- Loader -->
-    <div id="loader" aria-hidden="true">
-      <div class="loader-inner">
-        <div class="loader-line"><span class="prompt">$</span> ingest <span class="hl">rahul_khanna.csv</span></div>
-        <div class="loader-line" id="loader-rows">rows read: 0</div>
-        <div class="loader-bar"><i id="loader-fill"></i></div>
-        <div class="loader-line dim" id="loader-status">validating schema…</div>
-      </div>
-    </div>
-
-    <div id="cursor" aria-hidden="true"></div>
+    <a class="skip" href="#work">Skip to the work</a>
 
     <header class="nav" id="nav">
-      <a href="#top" class="brand" aria-label="Rahul Khanna, home">
-        <span class="brand-mark">RK</span><span class="brand-dot"></span>
-      </a>
+      <a href="#top" class="nav-name">Rahul Khanna</a>
       <nav class="nav-links" id="nav-links" aria-label="Main">
         <a href="#about">About</a>
+        <a href="#journey">Journey</a>
         <a href="#work">Work</a>
         <a href="#research">Research</a>
-        <a href="#stack">Stack</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="nav-right">
-        <a class="btn btn-ghost small" href="./resume.pdf" target="_blank" rel="noopener">Résumé</a>
-        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+        <a class="btn btn-line small" href="./resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
       </div>
     </header>
 
-    <main id="top">
-      <!-- HERO -->
-      <section class="hero" id="hero">
-        <canvas id="hero-canvas" aria-hidden="true"></canvas>
-        <div class="hero-content">
-          <p class="eyebrow mono"><span class="live-dot"></span> Open to Data Analyst, Data Engineer &amp; ML roles</p>
-          <h1 class="hero-title">
-            <span class="line"><span>Rahul</span></span>
-            <span class="line"><span>Khanna<em class="accent">.</em></span></span>
-          </h1>
-          <p class="hero-sub">
-            I build the <span class="swap" id="swap">pipelines</span><br />
-            that turn raw data into decisions.
-          </p>
+    <main>
+      <!-- The hall floor from above: several games' lines painted over each other -->
+      <section class="hero" id="top">
+        <svg class="hero-lines" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+          <g fill="none" stroke-width="6">
+            <g stroke="var(--green)">
+              <rect class="draw" style="--d: .05s" pathLength="1" x="700" y="-100" width="560" height="330" />
+            </g>
+            <g stroke="var(--yellow)">
+              <rect class="draw" style="--d: .2s" pathLength="1" x="900" y="-60" width="460" height="1020" />
+              <path class="draw" style="--d: .45s" pathLength="1" d="M900 250H1360M900 650H1360" />
+            </g>
+            <g stroke="var(--red-line)">
+              <rect class="draw" style="--d: .35s" pathLength="1" x="1010" y="640" width="240" height="320" />
+              <path class="draw" style="--d: .55s" pathLength="1" d="M800 960A330 330 0 0 1 1460 960" />
+            </g>
+            <g stroke="var(--white)">
+              <rect class="draw" style="--d: 0s" pathLength="1" x="860" y="90" width="800" height="720" />
+              <path class="draw" style="--d: .3s" pathLength="1" d="M860 450H1660" />
+              <circle class="draw" style="--d: .5s" pathLength="1" cx="1130" cy="450" r="150" />
+            </g>
+          </g>
+        </svg>
+
+        <div class="hero-copy">
+          <p class="status"><i></i>Open to data analyst, data engineer and ML roles</p>
+          <h1 class="hero-name"><span>Rahul</span><span>Khanna</span></h1>
+          <p class="hero-sub">Data analyst and data engineer. I build the pipelines, dashboards and models that turn raw data into decisions.</p>
           <div class="hero-cta">
-            <a href="#work" class="btn btn-primary">See the work</a>
-            <button class="btn btn-ghost" data-open-ask>Ask my portfolio</button>
+            <a href="#work" class="btn btn-solid">See the work</a>
+            <a href="#contact" class="btn btn-line">Get in touch</a>
           </div>
         </div>
-        <div class="hud mono" aria-hidden="true">
-          <div><span class="dim">stage</span> <b id="hud-stage">noise</b></div>
-          <div><span class="dim">points</span> <b id="hud-points">0</b></div>
-          <div><span class="dim">cursor</span> <b id="hud-cursor">(0.00, 0.00)</b></div>
-        </div>
-        <a href="#about" class="scroll-hint mono" aria-label="Scroll to about">scroll <i></i></a>
+        <p class="hint" id="hint">Scroll and the ball comes with you. Give it a kick.</p>
       </section>
 
-      <!-- METRICS -->
-      <section class="metrics" aria-label="Highlights">
-        <div class="metric"><b data-count="3">0</b><span>patent applications as co-inventor</span></div>
-        <div class="metric"><b data-count="4" data-suffix="">0</b><span>live data sources in one pipeline</span></div>
-        <div class="metric"><b data-count="4.0" data-decimals="1" data-suffix="%">0</b><span>MAPE on 1-day Brent forecasts</span></div>
-        <div class="metric"><b data-count="8.55" data-decimals="2">0</b><span>CGPA, BCA at LPU</span></div>
-      </section>
-
-      <!-- ABOUT -->
-      <section class="section about" id="about">
-        <div class="section-head">
-          <span class="mono tag">01 / about</span>
-          <h2 class="reveal">Clean data first.<br /><span class="muted">Then dashboards, models and products.</span></h2>
-        </div>
+      <section class="zone about" id="about">
+        <h2 class="painted">Clean data first. Then dashboards, models and products.</h2>
         <div class="about-grid">
-          <figure class="portrait reveal">
-            <div class="portrait-frame">
-              <img src="./rahul.webp" alt="Portrait of Rahul Khanna" width="800" height="1000" loading="lazy" />
-              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-            </div>
-            <figcaption class="mono">rahul_khanna.webp · Rajasthan, India</figcaption>
+          <figure class="portrait">
+            <img src="./rahul.webp" alt="Portrait of Rahul Khanna" width="800" height="1000" loading="lazy" />
           </figure>
-          <div class="about-copy">
-            <p class="lead reveal">
-              I'm a data analyst and data engineer who likes the unglamorous part: getting messy, multi-source data into a shape people can trust.
-            </p>
-            <p class="reveal">
-              I build pipelines that pull from APIs and the web, handle retries, schema drift, gaps and duplicates, and land clean tables in PostgreSQL. On top of that I build Power BI and Tableau dashboards, and forecasting and classification models when the question needs one.
-            </p>
-            <p class="reveal">
-              I'm currently an Operations Analyst Intern at AskIITians, where I own the operations MIS and turn messy, multi-source data into reliable daily reports. Alongside my BCA at Lovely Professional University, I'm co-inventor on three Indian patent applications and published a paper in IJNRD.
-            </p>
-            <div class="do-grid">
-              <article class="do-card reveal">
-                <span class="mono do-num">A</span>
-                <h3>Data engineering</h3>
-                <p>API ingestion, scraping, validation, deduplication, schema design in PostgreSQL, and lakehouse pipelines in Microsoft Fabric.</p>
-              </article>
-              <article class="do-card reveal">
-                <span class="mono do-num">B</span>
-                <h3>Analytics &amp; BI</h3>
-                <p>Power BI data models with DAX, Tableau views and Excel packs people actually open.</p>
-              </article>
-              <article class="do-card reveal">
-                <span class="mono do-num">C</span>
-                <h3>Machine learning</h3>
-                <p>Forecasting, classification and clustering, benchmarked honestly against baselines.</p>
-              </article>
-              <article class="do-card reveal">
-                <span class="mono do-num">D</span>
-                <h3>Apps &amp; products</h3>
-                <p>Next.js and React Native front ends so the data reaches the people who use it.</p>
-              </article>
-            </div>
-          </div>
+          <div class="about-copy" id="about-copy"></div>
         </div>
+        <div class="flips" id="stats" aria-label="Numbers"></div>
+        <h3 class="sub-painted">Four games on one floor</h3>
+        <p class="floor-note">On a hall floor each sport gets its own line colour. Here each kind of work does, and the colours mark the projects further down.</p>
+        <div class="games" id="games"></div>
       </section>
 
-      <!-- JOURNEY -->
-      <section class="section journey" id="journey">
-        <div class="section-head">
-          <span class="mono tag">02 / journey</span>
-          <h2 class="reveal">From first query<br /><span class="muted">to published research.</span></h2>
-        </div>
-        <div class="timeline" id="timeline">
-          <div class="tl-track"><i class="tl-fill" id="tl-fill"></i></div>
-          <div class="tl-item">
-            <span class="tl-year mono">2023</span>
-            <div class="tl-body"><h3>Started BCA</h3><p class="muted">Lovely Professional University, Phagwara</p><p>Foundations in programming, statistics and databases.</p></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-year mono">Jan–Apr 2025</span>
-            <div class="tl-body"><h3>Multi-source market data pipeline</h3><p class="muted">OilSense</p><p>Four public APIs merged into one validated dataset, a nine-page dashboard and a forecasting model.</p></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-year mono">2025</span>
-            <div class="tl-body"><h3>Patent co-inventor</h3><p class="muted">LPU, with the university IP cell</p><p>Invention disclosures, prior-art review and specifications for three Indian patent applications.</p></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-year mono">2025</span>
-            <div class="tl-body"><h3>Google Advanced Data Analytics</h3><p class="muted">Coursera · plus NPTEL</p><p>Statistics, regression and the full analytics workflow.</p></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-year mono">Apr 2026</span>
-            <div class="tl-body"><h3>Paper published in IJNRD</h3><p class="muted">Impact Factor 8.76</p><p>An empirical study of the TruePass campus safety system.</p></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-year mono">2026</span>
-            <div class="tl-body"><h3>BCA graduate, CGPA 8.55</h3><p class="muted">Building an Indian patent database &amp; filing-trends dashboard</p></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-year mono">2026 – Present</span>
-            <div class="tl-body"><h3>Operations Analyst Intern</h3><p class="muted">AskIITians</p><p>Owning the operations MIS: consolidating messy data from multiple sources into analysis-ready trackers and daily reports, and tracking live online-batch sessions across grades.</p></div>
-          </div>
-          <div class="tl-item now">
-            <span class="tl-year mono">Now</span>
-            <div class="tl-body"><h3>Looking for my first data role</h3><p>Data Analyst, Data Engineer or ML. On-site, hybrid or remote in India.</p></div>
-          </div>
-        </div>
+      <section class="zone journey" id="journey">
+        <h2 class="painted">From first query to published research.</h2>
+        <ol class="track" id="timeline"></ol>
       </section>
 
-      <!-- WORK -->
-      <section class="section work" id="work">
-        <div class="section-head">
-          <span class="mono tag">03 / work</span>
-          <h2 class="reveal">Selected work<br /><span class="muted">with the numbers behind it.</span></h2>
-        </div>
-        <div class="filters" role="tablist" aria-label="Filter projects" id="filters">
-          <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="chip" data-filter="de" role="tab" aria-selected="false">Data Engineering</button>
-          <button class="chip" data-filter="bi" role="tab" aria-selected="false">Analytics &amp; BI</button>
-          <button class="chip" data-filter="ml" role="tab" aria-selected="false">Machine Learning</button>
-          <button class="chip" data-filter="apps" role="tab" aria-selected="false">Apps &amp; Products</button>
-        </div>
-        <div class="projects" id="projects"></div>
+      <section class="zone work" id="work">
+        <h2 class="painted">Selected work, with the numbers behind it.</h2>
+        <div id="featured"></div>
+        <div class="sheet results" id="projects"></div>
       </section>
 
-      <!-- RESEARCH -->
-      <section class="section research" id="research">
-        <div class="section-head">
-          <span class="mono tag">04 / research</span>
-          <h2 class="reveal">Patents &amp; publications</h2>
-        </div>
-        <div class="research-grid">
-          <article class="r-card reveal">
-            <span class="status published mono">Published 2025</span>
-            <h3>Smart-ID Based Campus Presence &amp; Safety Management System</h3>
-            <p class="mono dim">App No. 202511104180</p>
-          </article>
-          <article class="r-card reveal">
-            <span class="status mono">Filed 2025</span>
-            <h3>A Smart Therapeutic Mattress System</h3>
-            <p class="mono dim">App No. 202511052262</p>
-          </article>
-          <article class="r-card reveal">
-            <span class="status mono">Filed 2026</span>
-            <h3>A Smart Urinal System for Early Detection of Chronic Kidney Disease</h3>
-            <p class="mono dim">App No. 202611071811</p>
-          </article>
-          <article class="r-card paper reveal">
-            <span class="status paper-tag mono">Paper · IJNRD</span>
-            <h3>Empirical-Study-Based Analysis of True-Pass System</h3>
-            <p class="mono dim">Vol. 11, Issue 4 · Apr 2026 · Impact Factor 8.76 · IJNRD2604711</p>
-          </article>
-        </div>
-        <div class="certs reveal">
-          <span class="mono dim">certifications</span>
-          <ul>
-            <li>Complete Guide to Managing Data with Microsoft Fabric <em>LinkedIn Learning · 2026</em></li>
-            <li>Databricks for Data Analysts <em>LinkedIn Learning · 2026</em></li>
-            <li>Google Advanced Data Analytics <em>Coursera · 2025</em></li>
-            <li>Data Analytics with Python <em>NPTEL · 2025</em></li>
-          </ul>
-        </div>
+      <section class="zone research" id="research">
+        <h2 class="painted">Patents and publications.</h2>
+        <div class="sheet" id="research-sheet"></div>
+        <h3 class="sub-painted" id="toolkit">The toolkit</h3>
+        <div class="tools" id="tools"></div>
       </section>
 
-      <!-- STACK -->
-      <section class="section stack" id="stack">
-        <div class="section-head">
-          <span class="mono tag">05 / stack</span>
-          <h2 class="reveal">The toolkit<br /><span class="muted">Drag the bubbles around.</span></h2>
-        </div>
-        <div class="filters" id="stack-filters" aria-label="Highlight a toolkit group">
-          <button class="chip active" data-group="all">All</button>
-          <button class="chip" data-group="de"><i class="sw" style="--c: var(--c-de)"></i>Data Engineering</button>
-          <button class="chip" data-group="bi"><i class="sw" style="--c: var(--c-bi)"></i>Analytics &amp; BI</button>
-          <button class="chip" data-group="ml"><i class="sw" style="--c: var(--c-ml)"></i>Machine Learning</button>
-        </div>
-        <div class="stack-stage" id="stack-stage">
-          <canvas id="stack-canvas" aria-hidden="true"></canvas>
-          <ul class="stack-list" id="stack-list" aria-label="Tools"></ul>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section class="section contact" id="contact">
-        <span class="mono tag">06 / contact</span>
-        <h2 class="contact-title reveal">Have data that needs<br />a pipeline, a dashboard<br />or a model?</h2>
+      <section class="finish" id="contact">
+        <h2 class="painted huge">Have data that needs a pipeline, a dashboard or a model?</h2>
         <div class="contact-row">
           <button class="email-btn" id="email-btn" data-email="rahulkhanna6593@gmail.com">
-            <span>rahulkhanna6593@gmail.com</span><em class="mono" id="email-state">copy</em>
+            <span>rahulkhanna6593@gmail.com</span><em id="email-state">Copy</em>
           </button>
-          <div class="socials">
-            <a href="https://www.linkedin.com/in/rahul-khannaa/" target="_blank" rel="noopener">LinkedIn ↗</a>
-            <a href="https://github.com/rahulkhanna5" target="_blank" rel="noopener">GitHub ↗</a>
-            <a href="./resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
-          </div>
+          <div class="socials" id="socials"></div>
         </div>
-        <footer class="footer mono">
+        <footer class="footer">
           <span>© 2026 Rahul Khanna</span>
-          <span class="dim">Designed &amp; built by me · Vite · Three.js · GSAP · Matter.js</span>
+          <span>Designed and built by me</span>
         </footer>
       </section>
     </main>
 
-    <!-- Project drawer -->
-    <div class="drawer" id="drawer" aria-hidden="true">
-      <div class="drawer-scrim" data-close-drawer></div>
-      <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
-        <button class="drawer-close" data-close-drawer aria-label="Close">✕</button>
-        <div id="drawer-content"></div>
-      </aside>
-    </div>
-
-    <!-- Ask my portfolio -->
-    <button class="ask-fab" data-open-ask aria-label="Ask my portfolio"><span class="live-dot"></span> Ask my portfolio</button>
-    <div class="ask" id="ask" aria-hidden="true">
-      <div class="ask-head">
-        <div>
-          <b>Ask my portfolio</b>
-          <p class="mono dim">answers are matched from my portfolio data, right in your browser</p>
-        </div>
-        <button class="ask-close" id="ask-close" aria-label="Close">✕</button>
-      </div>
-      <div class="ask-log" id="ask-log" aria-live="polite"></div>
-      <div class="ask-suggest" id="ask-suggest"></div>
+    <!-- The ball. Scrolling dribbles it down the page; the cursor kicks it. -->
+    <div class="ball" id="ball" aria-hidden="true">
+      <i class="ball-shadow"></i>
+      <svg viewBox="0 0 100 100" id="ball-skin">
+        <defs><clipPath id="ball-clip"><circle cx="50" cy="50" r="48" /></clipPath></defs>
+        <circle cx="50" cy="50" r="48" fill="#FFD426" />
+        <g clip-path="url(#ball-clip)" fill="none" stroke-linecap="round">
+          <path d="M-10 30C30 10 70 14 110 40" stroke="#F6F3EA" stroke-width="15" />
+          <path d="M-10 78C30 52 70 56 112 86" stroke="#0A1A3F" stroke-width="15" />
+          <path d="M50 -5C38 30 38 70 54 105" stroke="#0A1A3F" stroke-width="2" opacity=".5" />
+        </g>
+      </svg>
+      <i class="ball-shine"></i>
     </div>
 
     <script type="module" src="/src/main.ts"></script>
