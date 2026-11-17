@@ -80,6 +80,13 @@ if (target) {
   if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true })
 }
 
+// The court stays clear of the copy on wide screens (meet); on phones it sits
+// above the copy, so it can fill its band instead (slice).
+const court = document.querySelector('.hero-lines')!, phone = window.matchMedia('(max-width: 820px)')
+const fitCourt = () => court.setAttribute('preserveAspectRatio', `xMaxYMid ${phone.matches ? 'slice' : 'meet'}`)
+phone.addEventListener('change', fitCourt)
+fitCourt()
+
 initNav()
 initBall({ x: 0.76, y: 0.5, mx: 0.8, my: 0.2 })
 initEmail()
