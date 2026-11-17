@@ -5,18 +5,20 @@ import {
 
 /** Fills the page from src/data.ts. */
 
-const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!))
+export const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!))
 const fill = (id: string, html: string) => { document.getElementById(id)!.innerHTML = html }
 
 /** A short stroke of floor paint in a discipline's colour, with the discipline named for screen readers. */
-const stroke = (c: Category, label = true) =>
+export const stroke = (c: Category, label = true) =>
   `<span class="stroke" style="--c:${LINE[c].colour}">${label ? `<span class="sr">${CATEGORY_LABEL[c]}</span>` : ''}</span>`
 const cats = (p: Project) =>
   `<span class="cats" title="${p.cats.map((c) => CATEGORY_LABEL[c]).join(', ')}">${p.cats.map((c) => stroke(c)).join('')}</span>`
 
 function links(p: Project) {
   if (!p.links.length) return ''
-  return `<p class="links">${p.links.map((l) => `<a href="${l.href}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('')}</p>`
+  // other sites open in a new tab; pages of this site open in place
+  const out = (href: string) => (href.startsWith('/') ? '' : ' target="_blank" rel="noopener"')
+  return `<p class="links">${p.links.map((l) => `<a href="${l.href}"${out(l.href)}>${esc(l.label)}</a>`).join('')}</p>`
 }
 const detail = (p: Project) => `
   <div class="detail">

@@ -1,10 +1,11 @@
 import './styles.css'
 import { leagueRows, renderContent } from './content'
-import { $, initBall, initNav } from './floor'
+import { $, initBall, initEmail, initNav } from './floor'
 
 renderContent()
 initNav(['about', 'journey', 'work', 'research', 'contact'])
 initBall({ x: 0.66, y: 0.56, mx: 0.74, my: 0.27 })
+initEmail()
 
 /* ---------- league table ---------- */
 const league = $('#league'), leagueBody = $('#league-rows')
@@ -24,15 +25,6 @@ function openFromHash() {
 }
 window.addEventListener('hashchange', openFromHash)
 openFromHash()
-
-/* ---------- email copy ---------- */
-const emailBtn = $('#email-btn'), emailState = $('#email-state')
-emailBtn.addEventListener('click', async () => {
-  const email = emailBtn.dataset.email!
-  try { await navigator.clipboard.writeText(email); emailState.textContent = 'Copied' }
-  catch { location.href = `mailto:${email}` }
-  setTimeout(() => (emailState.textContent = 'Copy'), 2000)
-})
 
 // the hint has done its job once the reader has scrolled
 const hint = $('#hint')

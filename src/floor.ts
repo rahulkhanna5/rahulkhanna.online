@@ -33,6 +33,17 @@ export function initNav(sections: string[] = []) {
   sections.forEach((id) => io.observe($(`#${id}`)))
 }
 
+/** The email button copies the address, or opens the mail app if it can't. */
+export function initEmail() {
+  const btn = $('#email-btn'), state = $('#email-state')
+  btn.addEventListener('click', async () => {
+    const email = btn.dataset.email!
+    try { await navigator.clipboard.writeText(email); state.textContent = 'Copied' }
+    catch { location.href = `mailto:${email}` }
+    setTimeout(() => (state.textContent = 'Copy'), 2000)
+  })
+}
+
 /* ---------- the ball ----------
    It lies on the floor, so when the page scrolls it goes with the floor. The
    edges of the window push it along, which is how scrolling dribbles it down

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboards, Rahul Khanna</title>
+    <meta name="description" content="Power BI reports built by Rahul Khanna: retail sales and customers, pipeline health, app screening analytics and HR attrition, page by page." />
+    <meta property="og:title" content="Dashboards, Rahul Khanna" />
+    <meta property="og:description" content="Power BI reports, page by page, with the findings each one surfaces." />
+    <meta name="theme-color" content="#1F55C7" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="page-dash">
+    <a class="skip" href="#reports">Skip to the dashboards</a>
+
+    <header class="nav" id="nav">
+      <a href="/" class="nav-name">Rahul Khanna</a>
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="/#about">About</a>
+        <a href="/#journey">Journey</a>
+        <a href="/#work">Work</a>
+        <a href="/dashboards/" aria-current="page">Dashboards</a>
+        <a href="/#research">Research</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-line small" href="/resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- The analytics court: yellow lines are Analytics & BI, the white box is the data engineering under it -->
+      <section class="hero hero-dash" id="top">
+        <svg class="hero-lines" viewBox="0 0 1440 700" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+          <g fill="none" stroke-width="6">
+            <g stroke="var(--yellow)">
+              <rect class="draw" style="--d: .05s" pathLength="1" x="820" y="70" width="560" height="560" />
+              <path class="draw" style="--d: .3s" pathLength="1" d="M820 350H1380M1100 70V630" />
+              <circle class="draw" style="--d: .45s" pathLength="1" cx="1100" cy="350" r="110" />
+            </g>
+            <g stroke="var(--white)">
+              <rect class="draw" style="--d: .2s" pathLength="1" x="760" y="-40" width="720" height="780" />
+            </g>
+          </g>
+        </svg>
+        <div class="hero-copy">
+          <p class="status"><i></i><span id="dash-count">Power BI reports</span></p>
+          <h1 class="hero-name dash-name"><span>Dash</span><span>boards</span></h1>
+          <p class="hero-sub">Power BI reports I built, from the semantic model to the last chart title. Each opens on its headline numbers, and every chart title states its finding.</p>
+          <ol class="fixtures" id="fixtures" aria-label="Reports on this page"></ol>
+        </div>
+      </section>
+
+      <section class="zone reports" id="reports" aria-label="Reports"></section>
+
+      <section class="finish" id="contact">
+        <h2 class="painted huge">Need a dashboard people actually read?</h2>
+        <div class="contact-row">
+          <button class="email-btn" id="email-btn" data-email="rahulkhanna6593@gmail.com">
+            <span>rahulkhanna6593@gmail.com</span><em id="email-state">Copy</em>
+          </button>
+          <div class="socials" id="socials"></div>
+        </div>
+        <footer class="footer">
+          <span>© 2026 Rahul Khanna</span>
+          <a href="/">Back to the home page</a>
+        </footer>
+      </section>
+    </main>
+
+    <dialog class="zoom" id="zoom" aria-label="Report page, full size">
+      <div class="zoom-bar">
+        <p id="zoom-title"></p>
+        <button class="btn btn-solid small" id="zoom-close">Close</button>
+      </div>
+      <div class="zoom-body"><img id="zoom-img" alt="" /></div>
+    </dialog>
+
+    <!-- The ball. Scrolling dribbles it down the page; the cursor kicks it. -->
+    <div class="ball" id="ball" aria-hidden="true">
+      <i class="ball-shadow"></i>
+      <svg viewBox="0 0 100 100" id="ball-skin">
+        <defs><clipPath id="ball-clip"><circle cx="50" cy="50" r="48" /></clipPath></defs>
+        <circle cx="50" cy="50" r="48" fill="#FFD426" />
+        <g clip-path="url(#ball-clip)" fill="none" stroke-linecap="round">
+          <path d="M-10 30C30 10 70 14 110 40" stroke="#F6F3EA" stroke-width="15" />
+          <path d="M-10 78C30 52 70 56 112 86" stroke="#0A1A3F" stroke-width="15" />
+          <path d="M50 -5C38 30 38 70 54 105" stroke="#0A1A3F" stroke-width="2" opacity=".5" />
+        </g>
+      </svg>
+      <i class="ball-shine"></i>
+    </div>
+
+    <script type="module" src="/src/dashboards.ts"></script>
+  </body>
+</html>

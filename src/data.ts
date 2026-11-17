@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
     ],
     outcome: ['A governed Bronze, Silver and Gold lakehouse feeding a semantic model and interactive Power BI dashboards'],
     stack: ['Microsoft Fabric', 'Azure Pipelines', 'Lakehouse', 'Medallion architecture', 'CDC', 'Power BI'],
-    links: [],
+    links: [{ label: 'See the dashboards', href: '/dashboards/' }],
   },
   {
     id: 'cognicare',
@@ -288,7 +288,7 @@ export const CONTACT = {
   links: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/rahul-khannaa/' },
     { label: 'GitHub', href: 'https://github.com/rahulkhanna5' },
-    { label: 'Résumé', href: './resume.pdf' },
+    { label: 'Résumé', href: '/resume.pdf' },
   ],
 }
 
@@ -301,3 +301,59 @@ export const LINE: Record<Category, { colour: string; name: string }> = {
 }
 /** Which about-card belongs to which discipline. */
 export const ABOUT_CARD_CAT: Category[] = ['de', 'bi', 'ml', 'apps']
+
+/* ---------------------------------------------------------------------------
+   The dashboards page (/dashboards/). Images are page exports of the Power BI
+   reports, in public/dashboards/shots/<id>-<n>.jpg (2400px) and -sm.jpg
+   (1200px). Findings are taken from the reports' own chart titles and cards.
+   Where a report runs on synthetic data, say so: `data` is shown on the page.
+--------------------------------------------------------------------------- */
+
+export interface Dashboard {
+  id: string
+  title: string
+  kicker: string
+  cats: Category[]
+  summary: string
+  /** Where the numbers come from. Shown on the page next to the report. */
+  data: string
+  synthetic: boolean
+  /** Report pages, in order. With `shots`, each has an image. */
+  pages: string[]
+  shots: boolean
+  /** A public Publish-to-web link, loaded into the page on request. */
+  live?: string
+  findings: string[]
+  built: string[]
+  stack: string[]
+  related?: { label: string; href: string }
+}
+
+export const DASHBOARDS: Dashboard[] = [
+  {
+    id: 'retail',
+    title: 'Binaryville Retail Performance',
+    kicker: 'Sales and customer analytics on a Gold-layer star schema',
+    cats: ['bi'],
+    summary:
+      'Sales, margin and customer behaviour for Binaryville, a retailer of robots, drones and gadgets that sells in stores, on the web, in an app and on marketplaces. Built on a star schema of sales, dates, products and customers: Jan 2025 to Oct 2026, 130 products, 4.5K customers, 24K order lines.',
+    data: 'Synthetic data, generated in the shape of the Binaryville lakehouse. The numbers show the analysis, not a real business.',
+    synthetic: true,
+    pages: ['Sales Performance', 'Customer Analytics'],
+    shots: true,
+    findings: [
+      'Diwali season (Oct–Nov) drives the annual revenue peak',
+      'Drones are the second-biggest seller but earn only 9.7% margin',
+      'Discounts above 30% turn margin negative (−10.1%)',
+      'Only about 25% of new customers return in month 1, and the top 20% of customers bring in 60.5% of revenue',
+    ],
+    built: [
+      'KPI cards for revenue, gross margin, orders, average order value and YTD growth',
+      'Monthly cohort retention matrix by first-order month',
+      'RFM segmentation, from Champions to Can’t Lose',
+      'Revenue concentration by customer decile, and a weekday × quarter order heatmap',
+    ],
+    stack: ['Power BI', 'DAX', 'Star schema', 'Cohort analysis', 'RFM'],
+    related: { label: 'Part of: End-to-End Analytics on Microsoft Fabric', href: '/#project-fabric-lakehouse' },
+  },
+]
